@@ -1,21 +1,24 @@
-from flask import Flask
-app = Flask('app')# Python program to find the factorial of a number provided by the user.
+"""
+Write a function called linear_search_product that takes the list of products and a target product
+name as input. The function should perform a linear search to find the target product in the list and
+return a list of indices of all occurrences of the product if found, or an empty list if the product is not
+found.
+"""
 
-# change the value for a different result
-num = 7
 
-# To take input from the user
-#num = int(input("Enter a number: "))
+def linearSearchProduct(productList, targetProduct):
+  indices = []
 
-factorial = 1
+  for index, product in enumerate(productList):
+    if product == targetProduct:
+      indices.append(index)
 
-# check if the number is negative, positive or zero
-if num < 0:
-   print("Sorry, factorial does not exist for negative numbers")
-elif num == 0:
-   print("The factorial of 0 is 1")
-else:
-   for i in range(1,num + 1):
-       factorial = factorial*i
-   print("The factorial of",num,"is",factorial)
-  
+  return indices
+
+
+# Example usage:
+products = ["shoes", "boot", "loafer", "shoes", "sandal", "shoes"]
+target = "shoes"
+target2 = 'apple'
+result = linearSearchProduct(products, target)
+print(result)
